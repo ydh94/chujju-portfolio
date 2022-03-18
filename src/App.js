@@ -1,11 +1,17 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Home from 'pages/Home';
+import Projects from 'pages/Projects';
 import './App.css';
-import ReactPlayer from 'react-player';
 
 function App() {
   return (
-    <div className='App'>
-      <ReactPlayer url='https://www.youtube.com/watch?v=1-NK0HlOBV0' controls />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/projects' element={<Projects />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

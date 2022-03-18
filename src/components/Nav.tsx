@@ -1,7 +1,28 @@
 import { useNavigate } from 'react-router-dom';
 
-function Nav() {
-  return <div></div>;
-}
+export default function Nav() {
+  const navigate = useNavigate();
 
-export default Nav;
+  return (
+    <nav className='nav--container'>
+      <ul className='nav--menulist'>
+        <li
+          className='nav--menus'
+          onClick={() => {
+            navigate('/');
+          }}
+        >
+          Home
+        </li>
+        <li
+          className='nav--menus'
+          onClick={() => {
+            navigate('/projects');
+          }}
+        >
+          Projects
+        </li>
+      </ul>
+    </nav>
+  );
+}
