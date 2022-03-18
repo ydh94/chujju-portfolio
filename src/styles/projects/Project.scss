@@ -1,0 +1,24 @@
+@import '../common.scss';
+
+.project--container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project--video {
+  border: 1px solid blue;
+  width: 45%;
+  height: 50%;
+  margin: 1rem;
+}
+
+.project--article {
+  border: 1px solid blue;
+  width: 45%;
+  height: 50%;
+  margin: 1rem;
+}
