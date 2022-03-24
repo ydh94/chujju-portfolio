@@ -7,7 +7,7 @@ import '../styles/Projects.scss';
 
 export default function Projects() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [focusPage, setFocusPage] = useState(0);
+  const [focusPage, setFocusPage] = useState<number>(0);
 
   useEffect(() => {
     let page = 0;
