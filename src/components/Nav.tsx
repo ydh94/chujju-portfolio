@@ -23,6 +23,14 @@ export default function Nav() {
         >
           Projects
         </li>
+        <li
+          className='nav--menus'
+          onClick={() => {
+            navigate('/about');
+          }}
+        >
+          About
+        </li>
       </ul>
     </nav>
   );

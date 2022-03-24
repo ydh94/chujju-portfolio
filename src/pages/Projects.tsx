@@ -1,41 +1,37 @@
+import { useEffect, useRef, useState } from 'react';
 import Nav from 'components/Nav';
 import Project from 'components/projects/Project';
 import data from 'data';
-import { useEffect, useRef, useState } from 'react';
 
 import '../styles/Projects.scss';
 
 export default function Projects() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [focusPage, setFocusPage] = useState<number>(0);
+  const scrollHandler = (page: number) => {
+    setFocusPage(page);
+    const pageHeight = window.innerHeight;
+    containerRef.current?.scrollTo({
+      top: (pageHeight - 77.5) * page,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
-    let page = 0;
-
-    const { current } = containerRef;
-    const scrollHandler = (page: number) => {
-      const pageHeight = window.innerHeight;
-      current?.scrollTo({
-        top: (pageHeight - 77.5) * page,
-        left: 0,
-        behavior: 'smooth',
-      });
-    };
+    let page = focusPage;
 
     const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
-      const { deltaY } = e;
-
-      if (deltaY > 0) {
+      let { deltaY } = e;
+      if (deltaY >= 0 && deltaY < 10) {
         if (page < data.length - 1) {
           page++;
-          setFocusPage(page);
           scrollHandler(page);
         }
-      } else {
+      } else if (deltaY > -10 && deltaY <= 0) {
         if (page > 0) {
           page--;
-          setFocusPage(page);
           scrollHandler(page);
         }
       }
@@ -44,13 +40,16 @@ export default function Projects() {
     document.onkeydown = function (e: globalThis.KeyboardEvent) {
       e.preventDefault();
     };
-
-    current?.addEventListener('wheel', wheelHandler);
-  }, []);
+    containerRef.current?.addEventListener('wheel', wheelHandler);
+    return () => {
+      containerRef.current?.removeEventListener('wheel', wheelHandler);
+    };
+  }, [focusPage]);
 
   return (
     <div className='projects--container' ref={containerRef}>
       <Nav />
+
       {data.map((e, i) => {
         return <Project key={i} data={e} focused={focusPage === i} />;
       })}
