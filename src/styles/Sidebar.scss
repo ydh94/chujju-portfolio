@@ -1,0 +1,20 @@
+.sidebar--container {
+  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: calc(100vh - 80px);
+  width: 250px;
+  position: absolute;
+  background-color: white;
+}
+
+.sidebar--list {
+  margin: 10px;
+  cursor: pointer;
+  color: gray;
+}
+
+.sidebar--list--selected {
+  margin: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}

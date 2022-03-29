@@ -4,13 +4,12 @@ const data = [
     title: '페이커',
     content: '월드콘',
     timeline: [
-      { img: '', second: '' },
-      { img: '', second: '' },
-      { img: '', second: '' },
-      { img: '', second: '' },
-      { img: '', second: '' },
-      { img: '', second: '' },
-      { img: '', second: '' },
+      {
+        img: 'https://t1.daumcdn.net/cfile/tistory/2341B34A58070D4E04',
+        sec: 3,
+      },
+      { img: 'https://t1.daumcdn.net/cfile/tistory/2341B34A58070D4E04', sec: 5 },
+      { img: 'https://t1.daumcdn.net/cfile/tistory/2341B34A58070D4E04', sec: 8 },
     ],
   },
   {

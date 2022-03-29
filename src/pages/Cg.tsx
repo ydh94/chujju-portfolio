@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import Nav from 'components/Nav';
-import Project from 'components/projects/Project';
+import { Nav, Sidebar, Project } from 'components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import data from 'data';
+import '../styles/Cg.scss';
 
-import '../styles/Projects.scss';
-
-export default function Projects() {
+export default function Cg() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [focusPage, setFocusPage] = useState<number>(0);
+  // const [isShown, setIsShown] = useState<boolean>(false);
+
   const scrollHandler = (page: number) => {
     setFocusPage(page);
     const pageHeight = window.innerHeight;
@@ -17,6 +19,10 @@ export default function Projects() {
       behavior: 'smooth',
     });
   };
+
+  // const sidebarHandler = () => {
+  //   setIsShown(!isShown);
+  // };
 
   useEffect(() => {
     let page = focusPage;
@@ -47,9 +53,12 @@ export default function Projects() {
   }, [focusPage]);
 
   return (
-    <div className='projects--container' ref={containerRef}>
+    <div className='cg--container' ref={containerRef}>
       <Nav />
-
+      {/* <div className='cg--sidebar' onMouseEnter={sidebarHandler}>
+        <FontAwesomeIcon icon={faAngleRight} />
+      </div> */}
+      <Sidebar data={data} scrollHandler={scrollHandler} focusPage={focusPage} />
       {data.map((e, i) => {
         return <Project key={i} data={e} focused={focusPage === i} />;
       })}

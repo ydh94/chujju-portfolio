@@ -1,10 +1,10 @@
 @import '../common.scss';
 
 .project--container {
-  width: calc(100% - 20px);
+  width: 100%;
   height: calc(100% - 80px);
   border-bottom: 1px solid black;
-  margin: 0px 10px 0px 10px;
+  margin-left: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,9 +16,21 @@
   margin: 1rem;
 }
 
+.project--timeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project--image {
+  width: 15%;
+  margin: 1rem;
+  cursor: pointer;
+}
+
 .project--article {
   border: 1px solid blue;
-  width: 40%;
+  width: 30%;
   height: 70%;
   margin: 1rem;
 }
