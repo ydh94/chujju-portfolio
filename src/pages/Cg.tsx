@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import Nav from 'components/Nav';
-import Project from 'components/projects/Project';
+import { Nav, Sidebar, Project } from 'components';
 import data from 'data';
+import '../styles/Cg.scss';
 
-import '../styles/Projects.scss';
-
-export default function Projects() {
+export default function Cg() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [focusPage, setFocusPage] = useState<number>(0);
+
   const scrollHandler = (page: number) => {
     setFocusPage(page);
     const pageHeight = window.innerHeight;
@@ -47,9 +46,9 @@ export default function Projects() {
   }, [focusPage]);
 
   return (
-    <div className='projects--container' ref={containerRef}>
+    <div className='cg--container' ref={containerRef}>
       <Nav />
-
+      <Sidebar data={data} scrollHandler={scrollHandler} focusPage={focusPage} />
       {data.map((e, i) => {
         return <Project key={i} data={e} focused={focusPage === i} />;
       })}

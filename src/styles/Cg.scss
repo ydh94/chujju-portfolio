@@ -1,0 +1,22 @@
+@import './common.scss';
+
+.cg--container {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.cg--sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: calc(100vh - 80px);
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);
+}
+
+.cg--container::-webkit-scrollbar {
+  display: none;
+}

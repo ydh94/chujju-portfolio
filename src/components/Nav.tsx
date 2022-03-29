@@ -18,10 +18,18 @@ export default function Nav() {
         <li
           className='nav--menus'
           onClick={() => {
-            navigate('/projects');
+            navigate('/cg');
           }}
         >
-          Projects
+          CG
+        </li>
+        <li
+          className='nav--menus'
+          onClick={() => {
+            navigate('/web');
+          }}
+        >
+          WEB
         </li>
         <li
           className='nav--menus'
