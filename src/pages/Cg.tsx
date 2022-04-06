@@ -22,13 +22,13 @@ export default function Cg() {
 
     const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
-      let { deltaY } = e;
-      if (deltaY >= 0 && deltaY < 10) {
+      const { deltaY } = e;
+      if (deltaY > 0) {
         if (page < data.length - 1) {
           page++;
           scrollHandler(page);
         }
-      } else if (deltaY > -10 && deltaY <= 0) {
+      } else if (deltaY <= 0) {
         if (page > 0) {
           page--;
           scrollHandler(page);
