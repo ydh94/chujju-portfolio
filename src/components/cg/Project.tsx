@@ -13,6 +13,7 @@ export default function Project(attr: IPropsProject) {
   const { focused } = attr;
   const [play, setPlay] = useState<boolean>(false);
   const player = useRef<ReactPlayer>(null);
+
   const onSeek = (seconds: number) => {
     player.current?.seekTo(seconds, 'seconds');
   };
@@ -27,8 +28,8 @@ export default function Project(attr: IPropsProject) {
         <ReactPlayer url={video} controls width={'100%'} height={'100%'} playing={play} ref={player} />
         <div className='project--timeline'>
           {timeline &&
-            timeline.map((e: { img: string; sec: number }, i: number) => {
-              return <img className='project--image' key={i} alt='timeline' src={e.img} onClick={() => onSeek(e.sec)}></img>;
+            timeline.map((e, i) => {
+              return <img className='project--image' key={i} alt='timeline' src={e.img} onClick={() => onSeek(e.sec)} />;
             })}
         </div>
       </div>

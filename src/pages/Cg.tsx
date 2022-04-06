@@ -36,8 +36,10 @@ export default function Cg() {
       }
     };
 
-    document.onkeydown = function (e: globalThis.KeyboardEvent) {
-      e.preventDefault();
+    document.onkeydown = function (e: KeyboardEvent) {
+      if (e.key === ' ' || e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        return false;
+      }
     };
     containerRef.current?.addEventListener('wheel', wheelHandler);
   }, [focusPage]);
