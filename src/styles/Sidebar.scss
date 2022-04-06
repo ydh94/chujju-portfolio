@@ -11,6 +11,10 @@
   margin: 10px;
   cursor: pointer;
   color: gray;
+
+  &:hover {
+    color: black;
+  }
 }
 
 .sidebar--list--selected {

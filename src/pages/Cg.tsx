@@ -40,9 +40,6 @@ export default function Cg() {
       e.preventDefault();
     };
     containerRef.current?.addEventListener('wheel', wheelHandler);
-    return () => {
-      containerRef.current?.removeEventListener('wheel', wheelHandler);
-    };
   }, [focusPage]);
 
   return (

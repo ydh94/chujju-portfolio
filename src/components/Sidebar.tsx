@@ -1,7 +1,7 @@
 import '../styles/Sidebar.scss';
 
 interface ISidebarProps {
-  data: any;
+  data: { title: string }[];
   scrollHandler: (page: number) => void;
   focusPage: number;
 }
