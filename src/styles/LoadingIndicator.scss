@@ -1,8 +1,12 @@
 .loading--container {
+  width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .loading--backdrop {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
   z-index: 3;
   top: 0;
@@ -12,8 +16,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.loading--image {
-  width: 250px;
 }

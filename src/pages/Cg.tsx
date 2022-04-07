@@ -14,15 +14,18 @@ export default function Cg() {
     containerRef.current?.scrollTo({
       top: (pageHeight - 79) * page,
       left: 0,
+      behavior: 'smooth',
     });
   };
 
   useEffect(() => {
-    // let page = focusPage;
+    let page = focusPage;
 
     const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
+
       // const { deltaY } = e;
+
       // if (deltaY > 0) {
       //   if (page < data.length - 1) {
       //     page++;
@@ -49,7 +52,7 @@ export default function Cg() {
   }, [focusPage]);
 
   const handleLoading = () => {
-    setIsLoading(!isLoading);
+    setIsLoading(false);
   };
 
   return (
