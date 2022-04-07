@@ -1,7 +1,7 @@
 import '../styles/Sidebar.scss';
 
 interface ISidebarProps {
-  data: { title: string }[];
+  data: { client: string }[];
   scrollHandler: (page: number) => void;
   focusPage: number;
 }
@@ -16,7 +16,7 @@ export default function Sidebar(attr: ISidebarProps) {
       {data.map((e, i) => {
         return (
           <li key={i} className={focusPage === i ? `sidebar--list--selected` : `sidebar--list`} onClick={() => scrollHandler(i)}>
-            {e.title}
+            {e.client}
           </li>
         );
       })}

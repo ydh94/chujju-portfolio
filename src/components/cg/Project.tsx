@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player/youtube';
 import '../../styles/projects/Project.scss';
 
 interface IPropsProject {
-  data: { video: string; title: string; content: string; timeline?: { img: string; sec: number }[] };
+  data: { video: string; logo: string; title: string; client: string; content: string; timeline?: { img: string; sec: number }[] };
   key: number;
   focused: boolean;
 }
