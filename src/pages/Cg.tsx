@@ -24,19 +24,19 @@ export default function Cg() {
     const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
 
-      // const { deltaY } = e;
+      const { deltaY } = e;
 
-      // if (deltaY > 0) {
-      //   if (page < data.length - 1) {
-      //     page++;
-      //     scrollHandler(page);
-      //   }
-      // } else if (deltaY <= 0) {
-      //   if (page > 0) {
-      //     page--;
-      //     scrollHandler(page);
-      //   }
-      // }
+      if (deltaY > 0) {
+        if (page < data.length - 1) {
+          page++;
+          scrollHandler(page);
+        }
+      } else if (deltaY <= 0) {
+        if (page > 0) {
+          page--;
+          scrollHandler(page);
+        }
+      }
     };
 
     document.onkeydown = function (e: KeyboardEvent) {
