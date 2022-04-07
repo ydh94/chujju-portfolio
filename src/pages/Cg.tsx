@@ -12,31 +12,27 @@ export default function Cg() {
     setFocusPage(page);
     const pageHeight = window.innerHeight;
     containerRef.current?.scrollTo({
-      top: (pageHeight - 79) * page,
+      top: (pageHeight - 79.5) * page,
       left: 0,
       behavior: 'smooth',
     });
   };
 
   useEffect(() => {
-    let page = focusPage;
-
     const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
+      // const { deltaY } = e;
 
-      const { deltaY } = e;
-
-      if (deltaY > 0) {
-        if (page < data.length - 1) {
-          page++;
-          scrollHandler(page);
-        }
-      } else if (deltaY <= 0) {
-        if (page > 0) {
-          page--;
-          scrollHandler(page);
-        }
-      }
+      // if (deltaY > 0) {
+      //   if (page < data.length - 1) {
+      //     page++;
+      //   }
+      // } else if (deltaY < 0) {
+      //   if (page > 0) {
+      //     page--;
+      //   }
+      // }
+      // scrollHandler(page);
     };
 
     document.onkeydown = function (e: KeyboardEvent) {
