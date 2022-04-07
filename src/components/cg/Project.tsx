@@ -23,7 +23,7 @@ export default function Project(attr: IPropsProject) {
     if (focused) {
       setTimeout(() => {
         setPlay(true);
-      }, 300);
+      }, 1000);
     } else {
       setPlay(false);
     }
