@@ -20,6 +20,10 @@ export default function Project(attr: IPropsProject) {
   };
 
   useEffect(() => {
+    handleLoading();
+  }, []);
+
+  useEffect(() => {
     if (focused) {
       setTimeout(() => {
         setPlay(true);
